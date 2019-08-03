@@ -1,3 +1,6 @@
 [submodule "weather"]
 	path = weather
 	url = git@github.com:vladak/weather.git
+[submodule "PiOLED"]
+	path = PiOLED
+	url = git@github.com:vladak/PiOLED.git
