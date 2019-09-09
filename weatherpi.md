@@ -112,6 +112,22 @@ Also set the logging level to `error` so that the `[logging]` section looks like
 ```
 The `log-enabled` and log level settings will ensure `daemon.log` and `syslog.log` in the `/var/log` directory do not grow too much.
 
+Reduce the memory used by InfluxDB so that the `[data]` section contains:
+```
+  # CacheMaxMemorySize is the maximum size a shard's cache can
+  # reach before it starts rejecting writes.
+  # Valid size suffixes are k, m, or g (case insensitive, 1024 = 1k).
+  # Values without a size suffix are in bytes.
+  cache-max-memory-size = "300m"
+
+  # CacheSnapshotMemorySize is the size at which the engine will
+  # snapshot the cache and write it to a TSM file, freeing up memory
+  # Valid size suffixes are k, m, or g (case insensitive, 1024 = 1k).
+  # Values without a size suffix are in bytes.
+  cache-snapshot-memory-size = "1m"
+```
+ref: https://github.com/influxdata/influxdb/issues/5440
+
 ## Grafana
 
 ### Catch 1: install Grafana from the right source
