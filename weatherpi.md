@@ -72,6 +72,14 @@ add this to the config in the `scrape_configs` section:
   - job_name: weather
     static_configs:
       - targets: ['localhost:8111']
+      
+  - job_name: CPU_localhost
+    static_configs:
+      - targets: ['localhost:8222']
+
+  - job_name: CPU_pihole
+    static_configs:
+      - targets: ['pi:8222']
 ```
 
 ## Grafana
