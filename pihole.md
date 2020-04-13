@@ -92,6 +92,10 @@ Initially, Pi-hole was installed via Docker however later was reversed in favor 
 
 Once Pihole dashboard is up, go to Settings and disable query logging and flush the logs.
 
+### Custom blacklist for fishy domains
+
+Follow the instructions on https://github.com/vladak/fishysites
+
 ## PiOLED
 
 use https://github.com/vladak/PiOLED
