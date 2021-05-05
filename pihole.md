@@ -14,7 +14,8 @@ This Pi serves as NTP server (with RTC backed system time) and Pi-hole ad filtra
 
 Do not use the official script linked from http://www.piface.org.uk/assets/piface_clock/PiFaceClockguide.pdf , it does not work (https://github.com/piface/PiFace-Real-Time-Clock/issues/14). Instead, use this (adapted a bit from https://www.raspberrypi.org/forums/viewtopic.php?p=1234070):
 
-- enable I2C in `sudo raspi-config` (`Interface options`)
+- enable I2C in `sudo raspi-config`
+  - `Interface options` menu
 - install pre-requisites:
 ```
 sudo apt-get install i2c-tools
