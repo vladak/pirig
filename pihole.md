@@ -82,7 +82,7 @@ git clone --depth 1 https://github.com/pi-hole/pi-hole.git pi-hole
 sudo bash pi-hole/automated\ install/basic-install.sh
 ```
 
-Then change the admin password: `pihole -ap`
+Then change the admin password: `pihole -a -p`
 
 Initially, Pi-hole was installed via Docker however later was reversed in favor of standalone install because:
   - Pi-Hole docker image does not allow to control logging sufficiently
