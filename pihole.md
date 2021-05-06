@@ -103,3 +103,7 @@ Follow the instructions on https://github.com/vladak/fishysites
 ## PiOLED
 
 use https://github.com/vladak/PiOLED
+
+## Temperature monitoring
+
+TODO
