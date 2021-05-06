@@ -91,7 +91,10 @@ Initially, Pi-hole was installed via Docker however later was reversed in favor 
       - had to use clunky workaround (introduce system service to check settings periodically and disable logging)
   - `containerd` also contributes to the I/O - it periodically writes to disk
 
-Once Pihole dashboard is up, go to Settings and disable query logging and flush the logs.
+Once Pihole dashboard is up, disable query logging and flush the logs:
+```
+  pihole logging off
+```
 
 ### Custom blacklist for fishy domains
 
