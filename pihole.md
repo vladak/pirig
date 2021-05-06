@@ -71,7 +71,7 @@ sudo hwclock --test
 - enable as server: uncomment line `listen on *` in `/etc/openntpd/ntpd.conf` and restart the service:
 ```
 sudo service openntpd restart
-sudo ntpctl -s peers
+sudo ntpctl -s status
 ```
 
 ## Pi-hole
