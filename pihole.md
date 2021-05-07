@@ -108,8 +108,8 @@ This updates the database without deleting everything:
 sqlite3 /etc/pihole/gravity.db "SELECT Address FROM adlist" |sort >/home/pi/pihole.list
 wget -qO - https://v.firebog.net/hosts/lists.php?type=tick |sort >/home/pi/complete.list
 echo https://raw.githubusercontent.com/vladak/fishysites/master/fishy_domains.txt >> /home/pi/complete.list
-comm -23 pihole.list firebog.list |xargs -I{} sudo sqlite3 /etc/pihole/gravity.db "DELETE FROM adlist WHERE Address='{}';"
-comm -13 pihole.list firebog.list |xargs -I{} sudo sqlite3 /etc/pihole/gravity.db "INSERT INTO adlist (Address,Comment,Enabled) VALUES ('{}','firebog, added `date +%F`',1);"
+comm -23 pihole.list complete.list |xargs -I{} sudo sqlite3 /etc/pihole/gravity.db "DELETE FROM adlist WHERE Address='{}';"
+comm -13 pihole.list complete.list |xargs -I{} sudo sqlite3 /etc/pihole/gravity.db "INSERT INTO adlist (Address,Comment,Enabled) VALUES ('{}','firebog, added `date +%F`',1);"
 pihole restartdns reload-lists
 pihole -g
 ```
