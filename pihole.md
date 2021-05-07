@@ -1,6 +1,9 @@
 # Pi 3 nr. 2 setup
 
-This Pi serves as NTP server (with RTC backed system time) and Pi-hole ad filtration endpoint.
+This Pi serves as:
+  - NTP server
+    - with RTC backed system time
+  - Pi-hole ad filtration endpoint
 
 ## Components
 
