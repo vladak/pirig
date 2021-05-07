@@ -101,6 +101,18 @@ Once Pihole dashboard is up, disable query logging and flush the logs:
 
 Follow the instructions on https://github.com/vladak/fishysites
 
+### use firebog.net lists
+
+This updates the database without deleting everything:
+```
+sqlite3 /etc/pihole/gravity.db "SELECT Address FROM adlist" |sort >/home/pi/pihole.list
+wget -qO - https://v.firebog.net/hosts/lists.php?type=tick |sort >/home/pi/firebog.list
+comm -23 pihole.list firebog.list |xargs -I{} sudo sqlite3 /etc/pihole/gravity.db "DELETE FROM adlist WHERE Address='{}';"
+comm -13 pihole.list firebog.list |xargs -I{} sudo sqlite3 /etc/pihole/gravity.db "INSERT INTO adlist (Address,Comment,Enabled) VALUES ('{}','firebog, added `date +%F`',1);"
+pihole restartdns reload-lists
+pihole -g
+```
+
 ## PiOLED
 
 use https://github.com/vladak/PiOLED
