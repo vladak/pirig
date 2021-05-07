@@ -124,4 +124,4 @@ use https://github.com/vladak/PiOLED
 
 ## Temperature monitoring
 
-TODO
+Setup https://github.com/vladak/systemp
