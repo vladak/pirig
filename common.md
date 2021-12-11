@@ -7,10 +7,15 @@ initially based on https://caffinc.github.io/2016/12/raspberry-pi-3-headless/
 - use the minimal/Lite version of Raspbian
   - avoid X server, browsers, desktop packages
 - flash the system to the micro SD card using [Raspberry Pi Imager](https://www.raspberrypi.com/software/)
-  - change the configuration withing the Imager to enable SSH
+  - use the Lite version
+  - Ctrl+Shift+X: change the configuration withing the Imager
+    - change hostname
+    - enable SSH
+    - change password of the `pi` user
+    - disable telemetry
 - create DHCP entry for the Pi on the router
-- SSH into the pi
 - power up the Pi, wait for install to finish
+- SSH into the Pi as the `pi` user
 - run `raspi-config` and change:
   - default system locale to `C.UTF-8`
   - time zone to `Europe/Prague`
