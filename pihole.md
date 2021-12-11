@@ -82,6 +82,7 @@ sudo ntpctl -s status
 Use the same style of install as described on https://blog.sleeplessbeastie.eu/2018/01/11/how-to-install-and-configure-pi-hole/
 
 ```
+sudo apt-get -y install git
 git clone --depth 1 https://github.com/pi-hole/pi-hole.git pi-hole
 sudo bash pi-hole/automated\ install/basic-install.sh
 ```
