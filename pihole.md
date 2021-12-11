@@ -8,7 +8,6 @@ This Pi serves as:
 ## Components
 
 - RPi 3
-- Adafruit PiOLED: https://rpishop.cz/adafruit/874-adafruit-128x32-pioled.html
 - RTC clock: https://rpishop.cz/piface/149-piface-real-time-clock.html
 - 32 GiB micro SD card
 - power adapter for RPi 4
@@ -118,10 +117,6 @@ comm -13 pihole.list complete.list |xargs -I{} sudo sqlite3 /etc/pihole/gravity.
 pihole restartdns reload-lists
 pihole -g
 ```
-
-## PiOLED
-
-use https://github.com/vladak/PiOLED
 
 ## Temperature monitoring
 
