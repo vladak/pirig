@@ -11,6 +11,7 @@ initially based on https://caffinc.github.io/2016/12/raspberry-pi-3-headless/
   - Ctrl+Shift+X: change the configuration withing the Imager
     - change hostname
     - enable SSH
+      - allow pubkey auth only
     - change password of the `pi` user
     - disable telemetry
 - create DHCP entry for the Pi on the router
