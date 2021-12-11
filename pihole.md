@@ -8,13 +8,13 @@ This Pi serves as:
 ## Components
 
 - RPi 3
-- RTC clock: https://rpishop.cz/piface/149-piface-real-time-clock.html
+- RTC clock: TBD
 - 32 GiB micro SD card
 - power adapter for RPi 4
 
 ## RTC
 
-Do not use the official script linked from http://www.piface.org.uk/assets/piface_clock/PiFaceClockguide.pdf , it does not work (https://github.com/piface/PiFace-Real-Time-Clock/issues/14). Instead, use this (adapted a bit from https://www.raspberrypi.org/forums/viewtopic.php?p=1234070):
+TBD
 
 - enable I2C in `sudo raspi-config`
   - `Interface options` menu
@@ -22,49 +22,8 @@ Do not use the official script linked from http://www.piface.org.uk/assets/pifac
 ```
 sudo apt-get install i2c-tools
 ```
-- install the new service:
-```
-sudo mkdir /srv/pifacertc
-sudo chown $LOGNAME /srv/pifacertc
-cat << EOF >/srv/pifacertc/pifacertc.sh
-#!/bin/sh
-
-. /lib/lsb/init-functions
-
-log_success_msg "Probe the i2c-dev"
-modprobe i2c-dev
-# Calibrate the clock (default: 0x47). See datasheet for MCP7940N
-log_success_msg "Calibrate the clock"
-i2cset -y 1 0x6f 0x08 0x47
-log_success_msg "Probe the mcp7941x driver"
-modprobe i2c:mcp7941x
-log_success_msg "Add the mcp7941x device in the sys filesystem"
-# https://www.kernel.org/doc/Documentation/i2c/instantiating-devices
-echo mcp7941x 0x6f > /sys/class/i2c-dev/i2c-1/device/new_device
-log_success_msg "Synchronise the system clock and hardware RTC"
-hwclock --hctosys
-EOF
-sudo chmod +x /srv/pifacertc/pifacertc.sh
-sudo touch /etc/systemd/system/pifacertc.service
-sudo chown $LOGNAME /etc/systemd/system/pifacertc.service
-cat << EOF >/etc/systemd/system/pifacertc.service
-[Unit]
-Description=PiFace real-time clock
-
-[Service]
-ExecStart=/srv/pifacertc/pifacertc.sh
-
-[Install]
-WantedBy=multi-user.target
-EOF
-sudo chown root /etc/systemd/system/pifacertc.service
-sudo systemctl daemon-reload
-sudo systemctl enable pifacertc.service
-sudo systemctl start pifacertc.service
-```
 - check:
 ```
-sudo systemctl status pifacertc.service
 sudo hwclock --test
 ```
 
