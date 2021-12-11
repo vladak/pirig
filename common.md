@@ -6,12 +6,7 @@ use https://caffinc.github.io/2016/12/raspberry-pi-3-headless/
 
 - use the minimal/Lite version of Raspbian
   - avoid X server, browsers, desktop packages
-- flash the card on macOS:
-  - download balena Etcher
-  - get Raspbian Lite install image
-  - copy the image to the micro SD card using Etcher
-  - mount the micro SD card
-  - touch 'ssh' file in the 'boot' partition of the micro SD card
+- flash the system to the micro SD card using [Raspberry Pi Imager](https://www.raspberrypi.com/software/)
 - create DHCP entry for the Pi on the router
 - SSH into the pi
 - power up the Pi, wait for install to finish
