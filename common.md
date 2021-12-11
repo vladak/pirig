@@ -12,7 +12,8 @@ use https://caffinc.github.io/2016/12/raspberry-pi-3-headless/
   - copy the image to the micro SD card using Etcher
   - mount the micro SD card
   - touch 'ssh' file in the 'boot' partition of the micro SD card
-- create DHCP entry for the `pi` on the router
+- create DHCP entry for the Pi on the router
+- SSH into the pi
 - power up the Pi, wait for install to finish
 - run `raspi-config` and change:
   - default system locale to `C.UTF-8`
