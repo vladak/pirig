@@ -17,7 +17,7 @@ initially based on https://caffinc.github.io/2016/12/raspberry-pi-3-headless/
 - create DHCP entry for the Pi on the router
 - power up the Pi, wait for install to finish
 - SSH into the Pi as the `pi` user
-- run `raspi-config` and change:
+- run `sudo raspi-config` and change:
   - default system locale to `C.UTF-8`
   - time zone to `Europe/Prague`
   - GPLU memory split to 16 (in Advanced options)
