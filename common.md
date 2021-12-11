@@ -27,9 +27,9 @@ initially based on https://caffinc.github.io/2016/12/raspberry-pi-3-headless/
 ## Initial install
 
 ```
-sudo apt-get update
-sudo apt-get dist-upgrade
-sudo apt-get upgrade
+sudo apt-get -y update
+sudo apt-get -y dist-upgrade
+sudo apt-get -y upgrade
 sudo apt-get -y install vim
 sudo apt-get -y install sysstat # for iostat/sar
 sudo apt-get -y install iotop # run iotop with -ob
