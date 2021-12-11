@@ -86,6 +86,8 @@ git clone --depth 1 https://github.com/pi-hole/pi-hole.git pi-hole
 sudo bash pi-hole/automated\ install/basic-install.sh
 ```
 
+Use a custom DNS server in the configuration - set it to the IP address of default GW.
+
 Then change the admin password: `pihole -a -p`
 
 Initially, Pi-hole was installed via Docker however later was reversed in favor of standalone install because:
