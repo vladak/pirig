@@ -2,7 +2,7 @@
 
 ## Install preparations
 
-use https://caffinc.github.io/2016/12/raspberry-pi-3-headless/
+initially based on https://caffinc.github.io/2016/12/raspberry-pi-3-headless/
 
 - use the minimal/Lite version of Raspbian
   - avoid X server, browsers, desktop packages
