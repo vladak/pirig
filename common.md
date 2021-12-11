@@ -36,9 +36,6 @@ sudo apt-get -y install iotop # run iotop with -ob
 sudo apt-get -y install tcpdump netcat # for network debugging
 ```
 
-- setup SSH key to login
-- change the password of the `pi` account
-
 ## OpenNTPd
 
 - install (as client):
