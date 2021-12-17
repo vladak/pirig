@@ -19,7 +19,7 @@ initially based on https://caffinc.github.io/2016/12/raspberry-pi-3-headless/
 - SSH into the Pi as the `pi` user
 - run `sudo raspi-config` and change:
   - time zone to `Europe/Prague`
-  - GPLU memory split to 16 (in Advanced options)
+  - GPLU memory split to 16 MB (in Performance options)
 - add `commit=60` mount option to `/` in `/etc/fstab`
   - helps to avoid I/O done by ext4 journaling thread (`jbd2`)
 
