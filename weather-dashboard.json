@@ -19,14 +19,54 @@
   "links": [],
   "panels": [
     {
+      "alert": {
+        "conditions": [
+          {
+            "evaluator": {
+              "params": [
+                -10
+              ],
+              "type": "lt"
+            },
+            "operator": {
+              "type": "and"
+            },
+            "query": {
+              "params": [
+                "A",
+                "5m",
+                "now"
+              ]
+            },
+            "reducer": {
+              "params": [],
+              "type": "avg"
+            },
+            "type": "query"
+          }
+        ],
+        "executionErrorState": "alerting",
+        "for": "5m",
+        "frequency": "1m",
+        "handler": 1,
+        "message": "mrzne az prasti !",
+        "name": "Temperature alert",
+        "noDataState": "no_data",
+        "notifications": [
+          {
+            "uid": "DhNjGSzgz"
+          }
+        ]
+      },
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": "Prometheus",
       "fill": 1,
       "gridPos": {
-        "h": 9,
-        "w": 24,
+        "h": 8,
+        "w": 12,
         "x": 0,
         "y": 0
       },
@@ -57,81 +97,29 @@
       "steppedLine": false,
       "targets": [
         {
-          "alias": "kuchyne",
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "temperature_measurements",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "kuchyne"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              }
-            ]
-          ],
-          "tags": []
+          "expr": "weather_temp_kuchyne",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "kuchyne",
+          "refId": "A"
         },
         {
-          "alias": "terasa",
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "temperature_measurements",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "B",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "terasa"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              }
-            ]
-          ],
-          "tags": []
+          "expr": "weather_temp_terasa",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "terasa",
+          "refId": "B"
         }
       ],
-      "thresholds": [],
+      "thresholds": [
+        {
+          "colorMode": "critical",
+          "fill": true,
+          "line": true,
+          "op": "lt",
+          "value": -10
+        }
+      ],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
@@ -173,13 +161,98 @@
       }
     },
     {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Prometheus",
+      "fill": 1,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 0
+      },
+      "id": 7,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {},
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "pressure_sea_level_hpa",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Barometric pressure at sea level",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": "hPa",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
       "cacheTimeout": null,
-      "datasource": "InfluxDB - temperature",
+      "datasource": "Prometheus",
       "gridPos": {
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 9
+        "y": 8
       },
       "id": 4,
       "links": [],
@@ -225,27 +298,10 @@
       "pluginVersion": "6.2.5",
       "targets": [
         {
-          "alias": "terasa",
-          "groupBy": [],
-          "limit": "",
-          "measurement": "temperature_measurements",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "query": "SELECT \"terasa\" FROM \"temperature_measurements\" WHERE $timeFilter",
-          "rawQuery": false,
-          "refId": "A",
-          "resultFormat": "table",
-          "select": [
-            [
-              {
-                "params": [
-                  "terasa"
-                ],
-                "type": "field"
-              }
-            ]
-          ],
-          "tags": []
+          "expr": "weather_temp_terasa",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "refId": "A"
         }
       ],
       "timeFrom": null,
@@ -255,12 +311,12 @@
     },
     {
       "cacheTimeout": null,
-      "datasource": "InfluxDB - temperature",
+      "datasource": "Prometheus",
       "gridPos": {
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 9
+        "y": 8
       },
       "id": 5,
       "links": [],
@@ -301,27 +357,10 @@
       "pluginVersion": "6.2.5",
       "targets": [
         {
-          "alias": "kuchyne",
-          "groupBy": [],
-          "limit": "",
-          "measurement": "temperature_measurements",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "query": "SELECT \"kuchyne\" FROM \"temperature_measurements\" WHERE $timeFilter LIMIT 1",
-          "rawQuery": false,
-          "refId": "A",
-          "resultFormat": "table",
-          "select": [
-            [
-              {
-                "params": [
-                  "kuchyne"
-                ],
-                "type": "field"
-              }
-            ]
-          ],
-          "tags": []
+          "expr": "weather_temp_kuchyne",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "refId": "A"
         }
       ],
       "timeFrom": null,
@@ -369,5 +408,5 @@
   "timezone": "",
   "title": "Weather",
   "uid": "i-qDInzRk",
-  "version": 14
+  "version": 18
 }
