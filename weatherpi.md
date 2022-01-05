@@ -1,6 +1,7 @@
 # Pi setup
 
 Assumes:
+  - Raspbian installed
   - Ethernet connected + IP connectivity outside (allow this on the gateway in the appropriate VLAN rules)
   - 1-wire USB dongle connected to USB port
   - BME280 sensor connected via I2C (https://learn.adafruit.com/adafruit-bme280-humidity-barometric-pressure-temperature-sensor-breakout)
