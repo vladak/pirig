@@ -18,6 +18,8 @@ Assumes:
 
 ```
 sudo apt-get install python3-pip
+sudo pip3 install Adafruit-Blinka
+sudo pip3 install adafruit-circuitpython-bmp280
 ```
 
 ## Temperature monitoring
