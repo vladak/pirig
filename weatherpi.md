@@ -9,7 +9,8 @@ Assumes:
 
 ### I2C
 
-enable I2C via `raspi-config`
+- enable I2C via `raspi-config`
+- verify that the sensor is visible via `i2cdetect -l`
 
 ### Python
 
