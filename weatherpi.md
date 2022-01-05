@@ -9,8 +9,8 @@ Assumes:
 
 ### I2C
 
-- enable I2C via `raspi-config`
-- verify that the sensor is visible via `i2cdetect -l`
+- enable I2C via `sudo raspi-config`
+- verify that the sensor is visible via `sudo i2cdetect -l`
 
 ### Python
 
