@@ -1,6 +1,18 @@
-# Pi 3 setup
+# Pi setup
 
-## OWFS
+Assumes:
+  - 1-wire USB dongle connected to USB port
+  - BME280 sensor connected via I2C
+
+## Atmospheric pressure monitoring
+
+### I2C
+
+enable I2C via `raspi-config`
+
+## Temperature monitoring
+
+### OWFS
 
 ```
 sudo apt-get install owfs
