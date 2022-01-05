@@ -13,6 +13,7 @@ Assumes:
 
 - enable I2C via `sudo raspi-config`
 - verify that the sensor is visible via `sudo i2cdetect -l`
+  - should report something like this: `i2c-1	i2c       	bcm2835 (i2c@7e804000)          	I2C adapter`
 
 ### Python
 
