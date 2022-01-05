@@ -119,6 +119,10 @@ wget https://dl.grafana.com/oss/release/grafana_6.2.5_armhf.deb
 sudo dpkg -i grafana_6.2.5_armhf.deb
 ```
 
+### Setup dashboards
+
+Use the `*dashboard.json` exports to provision Grafana.
+
 ### 502 gateway problem in Grafana
 
 After adding data source to Grafana, it complained (502 gateway error) about it. I had to change data source configuration in Grafana to use `127.0.0.1` instead of `localhost` and then it started working.
