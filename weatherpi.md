@@ -16,7 +16,9 @@ Assumes:
 
 ### Python
 
-XXX
+```
+sudo apt-get install python3-pip
+```
 
 ## Temperature monitoring
 
