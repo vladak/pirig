@@ -17,7 +17,7 @@ Assumes:
 ### Python
 
 ```
-sudo apt-get install python3-pip
+sudo apt-get -y install python3-pip
 sudo pip3 install Adafruit-Blinka
 sudo pip3 install adafruit-circuitpython-bmp280
 ```
