@@ -2,13 +2,17 @@
 
 Assumes:
   - 1-wire USB dongle connected to USB port
-  - BME280 sensor connected via I2C
+  - BME280 sensor connected via I2C (https://learn.adafruit.com/adafruit-bme280-humidity-barometric-pressure-temperature-sensor-breakout)
 
-## Atmospheric pressure monitoring
+## Barometric pressure monitoring
 
 ### I2C
 
 enable I2C via `raspi-config`
+
+### Python
+
+XXX
 
 ## Temperature monitoring
 
