@@ -64,7 +64,9 @@ To get temperature readings:
 sensorlist[0].temperature
 ```
 
-### Weather service
+## Weather service
+
+Contains monitoring for both temperature and barometric pressure.
 
 Install Git to get the code:
 ```
