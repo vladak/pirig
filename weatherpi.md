@@ -1,11 +1,11 @@
-# Pi setup
+# Weather Pi setup
 
 Assumes:
   - Raspbian installed
   - Ethernet connected + IP connectivity outside (allow this on the gateway in the appropriate VLAN rules)
   - 1-wire USB dongle connected to USB port
     - 1-wire temperature sensors connected to the USB dongle via RJ-11 
-  - BME280 sensor connected via I2C (https://learn.adafruit.com/adafruit-bme280-humidity-barometric-pressure-temperature-sensor-breakout)
+  - BMP280 sensor connected via I2C (https://learn.adafruit.com/adafruit-bme280-humidity-barometric-pressure-temperature-sensor-breakout)
 
 ## Barometric pressure monitoring
 
@@ -122,6 +122,8 @@ sudo dpkg -i grafana_6.2.5_armhf.deb
 ### Setup dashboards
 
 Use the `*dashboard.json` exports to provision Grafana.
+
+The Y axis limits for barometric pressure are set based on https://en.wikipedia.org/wiki/List_of_atmospheric_pressure_records_in_Europe
 
 ### 502 gateway problem in Grafana
 
