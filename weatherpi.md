@@ -3,7 +3,7 @@
 Assumes:
   - Raspbian installed
   - Ethernet connected + IP connectivity outside (allow this on the gateway in the appropriate VLAN rules)
-  - 1-wire USB dongle connected to USB port
+  - [DS9490R](https://www.maximintegrated.com/en/products/interface/universal-serial-bus/DS9490.html) 1-wire USB dongle connected to USB port
     - 1-wire temperature sensors connected to the USB dongle via RJ-11 
   - [BMP280](https://www.adafruit.com/product/2651) sensor connected via I2C
     - using the guide from https://learn.adafruit.com/adafruit-bmp280-barometric-pressure-plus-temperature-sensor-breakout/circuitpython-test
