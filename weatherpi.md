@@ -72,3 +72,7 @@ The Y axis limits for barometric pressure are set based on https://en.wikipedia.
 ### 502 gateway problem in Grafana
 
 After adding data source to Grafana, it complained (502 gateway error) about it. I had to change data source configuration in Grafana to use `127.0.0.1` instead of `localhost` and then it started working.
+
+### Setup PagerDuty alert channel and notifications
+
+Copy the *Integration Key* from the PagerDuty web interface.
