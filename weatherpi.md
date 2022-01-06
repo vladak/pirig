@@ -11,7 +11,7 @@ Assumes:
 
 ## Weather service
 
-Contains monitoring for both temperature and barometric pressure.
+Contains monitoring for various environmental metrics.
 
 Install Git to get the code:
 ```
