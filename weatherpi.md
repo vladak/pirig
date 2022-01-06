@@ -76,3 +76,5 @@ After adding data source to Grafana, it complained (502 gateway error) about it.
 ### Setup PagerDuty alert channel and notifications
 
 Copy the *Integration Key* from the PagerDuty web interface.
+
+Setup alert rule for outside temperature.
