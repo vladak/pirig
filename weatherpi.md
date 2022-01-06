@@ -5,7 +5,8 @@ Assumes:
   - Ethernet connected + IP connectivity outside (allow this on the gateway in the appropriate VLAN rules)
   - 1-wire USB dongle connected to USB port
     - 1-wire temperature sensors connected to the USB dongle via RJ-11 
-  - BMP280 sensor connected via I2C (https://learn.adafruit.com/adafruit-bmp280-barometric-pressure-plus-temperature-sensor-breakout/circuitpython-test)
+  - [BMP280](https://www.adafruit.com/product/2651) sensor connected via I2C
+    - using the guide from https://learn.adafruit.com/adafruit-bmp280-barometric-pressure-plus-temperature-sensor-breakout/circuitpython-test
 
 ## Barometric pressure monitoring
 
