@@ -139,7 +139,7 @@
       },
       "yaxes": [
         {
-          "format": "short",
+          "format": "celsius",
           "label": "temperature",
           "logBase": 1,
           "max": null,
@@ -147,7 +147,7 @@
           "show": true
         },
         {
-          "format": "short",
+          "format": "celsius",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -175,13 +175,13 @@
       },
       "id": 7,
       "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
+        "avg": true,
+        "current": true,
+        "max": true,
+        "min": true,
         "show": true,
         "total": false,
-        "values": false
+        "values": true
       },
       "lines": true,
       "linewidth": 1,
@@ -224,7 +224,7 @@
       },
       "yaxes": [
         {
-          "format": "short",
+          "format": "pressurehpa",
           "label": "hPa",
           "logBase": 1,
           "max": null,
@@ -232,12 +232,12 @@
           "show": true
         },
         {
-          "format": "short",
+          "format": "pressurehpa",
           "label": null,
           "logBase": 1,
           "max": null,
           "min": null,
-          "show": true
+          "show": false
         }
       ],
       "yaxis": {
@@ -408,5 +408,5 @@
   "timezone": "",
   "title": "Weather",
   "uid": "i-qDInzRk",
-  "version": 18
+  "version": 22
 }
