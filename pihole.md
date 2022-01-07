@@ -61,6 +61,8 @@ Once Pihole dashboard is up, disable query logging and flush the logs:
   pihole logging off
 ```
 
+Allow non-local queries in the PiHole web admin interface - switch to *Respond only on interface eth0*
+
 ### Use custom lists
 
 combine lists from:
