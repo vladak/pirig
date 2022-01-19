@@ -37,6 +37,12 @@ sudo reboot
 ```
 sudo i2cdetect -y 1
 ```
+- disable file-system based "clock":
+```
+    sudo apt-get -y remove fake-hwclock
+    sudo update-rc.d -f fake-hwclock remove
+    sudo systemctl disable fake-hwclock
+```
 - test
 ```
 sudo hwclock --test
