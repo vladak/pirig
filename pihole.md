@@ -43,9 +43,15 @@ sudo i2cdetect -y 1
     sudo update-rc.d -f fake-hwclock remove
     sudo systemctl disable fake-hwclock
 ```
-- test
+- test (should successfully read the time from RTC eventually) 
 ```
 sudo hwclock --test
+```
+- edit `/lib/udev/hwclock-set` so it looks like this:
+```
+#!/bin/bash
+dev=$1
+/sbin/hwclock --rtc=$dev --hctosys
 ```
 
 ## OpenNTPd
