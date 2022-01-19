@@ -11,6 +11,8 @@ This Pi serves as:
 - RTC clock: [PiRTC DS3231](https://www.adafruit.com/product/4282) with CR1220 battery
 - 32 GiB micro SD card
 
+![Pihole with RTC](/img/Pi_DS3231.jpg)
+
 ## OpenNTPd
 
 - enable as server: uncomment line `listen on *` in `/etc/openntpd/ntpd.conf` and restart the service:
