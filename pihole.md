@@ -13,13 +13,17 @@ This Pi serves as:
 
 ## RTC
 
-TBD
+Using the guide on https://learn.adafruit.com/adding-a-real-time-clock-to-raspberry-pi
 
 - enable I2C in `sudo raspi-config`
   - `Interface options` menu
+- check that the clock is visible (should report ):
+```
+sudo i2cdetect -y 1
+```
 - install pre-requisites:
 ```
-sudo apt-get install i2c-tools
+sudo apt-get install -y i2c-tools
 ```
 - check:
 ```
