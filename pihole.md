@@ -25,7 +25,19 @@ sudo apt-get install -y i2c-tools
 ```
 sudo i2cdetect -y 1
 ```
-- check:
+- add the system config:
+```
+echo "dtoverlay=i2c-rtc,ds3231" | sudo tee /boot/config.txt
+```
+- reboot:
+```
+sudo reboot
+```
+- check once again (should report `UU` instead of `68`):
+```
+sudo i2cdetect -y 1
+```
+- test
 ```
 sudo hwclock --test
 ```
