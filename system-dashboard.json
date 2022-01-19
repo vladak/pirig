@@ -279,11 +279,18 @@
           "refId": "A"
         },
         {
-          "expr": "avg_over_time(CPU_temp_teplota[5m])",
+          "expr": "avg_over_time(CPU_temp_weather[5m])",
           "format": "time_series",
           "intervalFactor": 1,
-          "legendFormat": "teplota",
+          "legendFormat": "weather",
           "refId": "B"
+        },
+        {
+          "expr": "avg_over_time(CPU_temp_docker[5m])",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "dockerpi",
+          "refId": "C"
         }
       ],
       "thresholds": [
@@ -299,7 +306,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "CPU temperatures",
+      "title": "CPU temperatures (5m avg)",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -461,5 +468,5 @@
   "timezone": "",
   "title": "system",
   "uid": "ASpzZRkRk",
-  "version": 23
+  "version": 25
 }
