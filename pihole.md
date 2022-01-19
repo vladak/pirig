@@ -11,6 +11,14 @@ This Pi serves as:
 - RTC clock: [PiRTC DS3231](https://www.adafruit.com/product/4282)
 - 32 GiB micro SD card
 
+## OpenNTPd
+
+- enable as server: uncomment line `listen on *` in `/etc/openntpd/ntpd.conf` and restart the service:
+```
+sudo service openntpd restart
+sudo ntpctl -s status
+```
+
 ## RTC
 
 Using the guide on https://learn.adafruit.com/adding-a-real-time-clock-to-raspberry-pi
@@ -52,14 +60,6 @@ sudo hwclock --test
 #!/bin/bash
 dev=$1
 /sbin/hwclock --rtc=$dev --hctosys
-```
-
-## OpenNTPd
-
-- enable as server: uncomment line `listen on *` in `/etc/openntpd/ntpd.conf` and restart the service:
-```
-sudo service openntpd restart
-sudo ntpctl -s status
 ```
 
 ## Pi-hole
