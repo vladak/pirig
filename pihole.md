@@ -8,7 +8,7 @@ This Pi serves as:
 ## Components
 
 - RPi 3
-- RTC clock: [PiRTC DS3231](https://www.adafruit.com/product/4282)
+- RTC clock: [PiRTC DS3231](https://www.adafruit.com/product/4282) with CR1220 battery
 - 32 GiB micro SD card
 
 ## OpenNTPd
