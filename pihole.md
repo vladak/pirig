@@ -1,4 +1,4 @@
-# Pi 3 nr. 2 setup
+# Pihole setup
 
 This Pi serves as:
   - NTP server
@@ -8,9 +8,8 @@ This Pi serves as:
 ## Components
 
 - RPi 3
-- RTC clock: TBD
+- RTC clock: [PiRTC DS3231](https://www.adafruit.com/product/4282)
 - 32 GiB micro SD card
-- power adapter for RPi 4
 
 ## RTC
 
