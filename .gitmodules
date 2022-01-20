@@ -1,9 +1,6 @@
 [submodule "weather"]
 	path = weather
 	url = https://github.com/vladak/weather.git
-[submodule "PiOLED"]
-	path = PiOLED
-	url = https://github.com/vladak/PiOLED.git
 [submodule "systemp"]
 	path = systemp
 	url = https://github.com/vladak/systemp.git
