@@ -26,7 +26,8 @@ initially based on https://caffinc.github.io/2016/12/raspberry-pi-3-headless/
 ## Initial install
 
 ```
-sudo apt-get -y update
+# The --allow-releaseinfo-change is handy in case: "changed its 'Suite' value from 'unstable' to 'stable'"
+sudo apt-get -y update --allow-releaseinfo-change
 sudo apt-get -y dist-upgrade
 sudo apt-get -y upgrade
 sudo apt-get -y install vim
