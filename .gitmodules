@@ -4,3 +4,6 @@
 [submodule "systemp"]
 	path = systemp
 	url = https://github.com/vladak/systemp.git
+[submodule "zerodisplay"]
+	path = zerodisplay
+	url = https://github.com/vladak/zerodisplay
