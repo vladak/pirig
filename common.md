@@ -53,3 +53,7 @@ This helps to save the SD card.
 Bump the value of `SIZE` to 100M in `/etc/log2ram.conf`.
 
 This will help with Pi-hole logging. Use `sudo iotop -ob` to confirm.
+
+## Temperature monitoring
+
+Setup https://github.com/vladak/systemp
