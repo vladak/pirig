@@ -110,6 +110,3 @@ pihole restartdns reload-lists
 pihole -g
 ```
 
-## Temperature monitoring
-
-Setup https://github.com/vladak/systemp
