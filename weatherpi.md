@@ -4,7 +4,7 @@ Assumes:
   - Raspbian installed
   - Ethernet connected + IP connectivity outside (allow this on the gateway in the appropriate VLAN rules)
     - the outside connectivity is needed e.g. for Grafana to send alerts via PagerDuty
-  - sensors as per https://github.com/vladak/weather/
+  - sensors as per https://github.com/vladak/weather/blob/master/README.md#sensors
 
 ## Weather service
 
