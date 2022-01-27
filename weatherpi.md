@@ -8,7 +8,7 @@ Assumes:
 
 ## RTC
 
-In order to keep the time for Grafana/Prometheus a RTC is installed. This is the [Adafruit PCF8523 Real Time Clock Breakout Board - STEMMA QT](https://www.adafruit.com/product/5189) and is connected to the same QT board as the environment sensors.
+In order to keep the time for Grafana/Prometheus a RTC is installed. This is the [Adafruit PCF8523 Real Time Clock Breakout Board - STEMMA QT](https://www.adafruit.com/product/5189) with CR1220 battery. It is connected to the same QT board as the environment sensors.
 
 The setup follows the steps on https://github.com/vladak/pirig/blob/master/pihole.md#rtc
 
