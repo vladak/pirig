@@ -36,9 +36,8 @@ sudo apt-get install -y i2c-tools
 sudo i2cdetect -y 1
 ```
 - add the system config:
-```
-echo "dtoverlay=i2c-rtc,ds3231" | sudo tee /boot/config.txt
-```
+  - for DS3231 (the more precise variant): `echo "dtoverlay=i2c-rtc,ds3231" | sudo tee /boot/config.txt`
+  - or for [PCF8523](https://www.adafruit.com/product/5189): `echo "dtoverlay=i2c-rtc,pcf8523" | sudo tee /boot/config.txt`
 - reboot:
 ```
 sudo reboot
