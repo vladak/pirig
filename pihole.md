@@ -56,11 +56,13 @@ sudo i2cdetect -y 1
 ```
 sudo hwclock --test
 ```
-- edit `/lib/udev/hwclock-set` so it looks like this:
+- overwrite `/lib/udev/hwclock-set`:
 ```
+cat <<EOF > /lib/udev/hwclock-set
 #!/bin/bash
-dev=$1
+dev=\$1
 /sbin/hwclock --rtc=$dev --hctosys
+EOF
 ```
 
 ## Pi-hole
