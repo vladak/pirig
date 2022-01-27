@@ -6,6 +6,12 @@ Assumes:
     - the outside connectivity is needed e.g. for Grafana to send alerts via PagerDuty
   - sensors as per https://github.com/vladak/weather/blob/master/README.md#sensors
 
+## RTC
+
+In order to keep the time for Grafana/Prometheus a RTC is installed. This is the [Adafruit PCF8523 Real Time Clock Breakout Board - STEMMA QT](https://www.adafruit.com/product/5189) and is connected to the same QT board as the environment sensors.
+
+The setup follows the steps on https://github.com/vladak/pirig/blob/master/pihole.md#rtc
+
 ## Weather service
 
 Contains monitoring for various environmental metrics.
