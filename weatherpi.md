@@ -56,6 +56,12 @@ add this to the config in the `scrape_configs` section:
       - targets: ['pi:8222']
 ```
 
+Also, [increase the storage retention](https://stackoverflow.com/questions/59298811/increasing-prometheus-storage-retention) by adding `--storage.tsdb.retention=1y` to `ARGS` in `/etc/defaults/prometheus` file. This will be useful e.g. for getting past weather metrics. Then restart and verify that the option is used:
+```
+sudo systemctl restart prometheus
+sudo systemctl status prometheus
+```
+
 ## Grafana
 
 ### Catch 1: install Grafana from the right source
