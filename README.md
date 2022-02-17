@@ -7,3 +7,4 @@ Pi rig documentation
   - [Pi hole](pihole.md)
   - [Weather Pi](weatherpi.md)
   - [Zero display](https://github.com/vladak/zerodisplay)
+  - [Work monitoring](https://github.com/vladak/workmon)
