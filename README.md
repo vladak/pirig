@@ -8,3 +8,4 @@ Pi rig documentation
   - [Weather Pi](weatherpi.md)
   - [Zero display](https://github.com/vladak/zerodisplay)
   - [Work monitoring](https://github.com/vladak/workmon)
+  - Docker Pi
