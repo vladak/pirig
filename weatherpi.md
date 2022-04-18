@@ -69,6 +69,19 @@ WantedBy=multi-user.target
 EOF
 ```
 
+create the data directory:
+```
+mkdir /home/pi/prometheus-data
+sudo chown prometheus:prometheus prometheus-data
+```
+
+create the initial config options:
+```
+cat << EOF >/etc/default/prometheus
+ARGS="--storage.tsdb.retention=1y --config.file=/etc/prometheus/prometheus.yml --storage.tsdb.path=/home/pi/prometheus-data"
+EOF
+```
+
 enable the service:
 
 ```
