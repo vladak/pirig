@@ -69,6 +69,12 @@ WantedBy=multi-user.target
 EOF
 ```
 
+enable the service:
+
+```
+sudo systemctl enable prometheus
+```
+
 add this to the config in the `scrape_configs` section:
 ```yml
   - job_name: weather
