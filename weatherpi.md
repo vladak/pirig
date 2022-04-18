@@ -46,6 +46,12 @@ tar xfz prometheus-2.34.0.linux-armv7.tar.gz
 mv prometheus-2.34.0.linux-armv7 prometheus
 ```
 
+create the user/group:
+```
+groupadd -g 120 prometheus
+useradd -u 115 -g 120 -s /usr/sbin/nologin prometheus
+```
+
 setup the service:
 
 ```
