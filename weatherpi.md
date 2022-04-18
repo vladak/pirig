@@ -81,17 +81,11 @@ mkdir /home/pi/prometheus-data
 sudo chown prometheus:prometheus prometheus-data
 ```
 
-create the initial config options:
+create the initial config options (set the data size per expected available space on the file system):
 ```
 cat << EOF | sudo tee >/etc/default/prometheus
-ARGS="--storage.tsdb.retention=1y --config.file=/etc/prometheus/prometheus.yml --storage.tsdb.path=/home/pi/prometheus-data"
+ARGS="--storage.tsdb.retention.size=20GB --config.file=/etc/prometheus/prometheus.yml --storage.tsdb.path=/home/pi/prometheus-data"
 EOF
-```
-
-enable the service:
-
-```
-sudo systemctl enable prometheus
 ```
 
 add this to the config in the `scrape_configs` section:
@@ -109,7 +103,13 @@ add this to the config in the `scrape_configs` section:
       - targets: ['pi:8222']
 ```
 
-Also, [increase the storage retention](https://stackoverflow.com/questions/59298811/increasing-prometheus-storage-retention) by adding `--storage.tsdb.retention=1y` to `ARGS` in `/etc/defaults/prometheus` file. This will be useful e.g. for getting past weather metrics. Then restart and verify that the option is used:
+enable the service:
+
+```
+sudo systemctl enable prometheus
+```
+
+check the state
 ```
 sudo systemctl restart prometheus
 sudo systemctl status prometheus
