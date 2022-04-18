@@ -49,7 +49,7 @@ mv prometheus-2.34.0.linux-armv7 prometheus
 setup the service:
 
 ```
-cat << EOF >/etc/systemd/system/prometheus.service
+cat << EOF | sudo tee >/etc/systemd/system/prometheus.service
 [Unit]
 Description=Monitoring system and time series database
 Documentation=https://prometheus.io/docs/introduction/overview/
@@ -77,7 +77,7 @@ sudo chown prometheus:prometheus prometheus-data
 
 create the initial config options:
 ```
-cat << EOF >/etc/default/prometheus
+cat << EOF | sudo tee >/etc/default/prometheus
 ARGS="--storage.tsdb.retention=1y --config.file=/etc/prometheus/prometheus.yml --storage.tsdb.path=/home/pi/prometheus-data"
 EOF
 ```
