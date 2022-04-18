@@ -1,6 +1,7 @@
 # Weather Pi setup
 
 Assumes:
+  - sufficiently big SD card to store the Prometheus data with long retention (bigger than 32 GB)
   - Raspbian installed
   - Ethernet connected + IP connectivity outside (allow this on the gateway in the appropriate VLAN rules)
     - the outside connectivity is needed e.g. for Grafana to send alerts via PagerDuty
