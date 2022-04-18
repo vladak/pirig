@@ -37,8 +37,36 @@ when it was not possible to get/store data and it was just spinning on CPU.
 
 Install Prometheus:
 
+Note: do not install from APT since Raspbian contains really old version. Instead, grab the latest stable form armv7 from https://prometheus.io/download/
+
 ```
-sudo apt-get install prometheus
+wget https://github.com/prometheus/prometheus/releases/download/v2.34.0/prometheus-2.34.0.linux-armv7.tar.gz
+cd
+tar xfz prometheus-2.34.0.linux-armv7.tar.gz
+mv prometheus-2.34.0.linux-armv7 prometheus
+```
+
+setup the service:
+
+```
+cat << EOF >/etc/systemd/system/prometheus.service
+[Unit]
+Description=Monitoring system and time series database
+Documentation=https://prometheus.io/docs/introduction/overview/
+
+[Service]
+Restart=always
+User=prometheus
+EnvironmentFile=/etc/default/prometheus
+ExecStart=/home/pi/prometheus/prometheus $ARGS
+ExecReload=/bin/kill -HUP $MAINPID
+TimeoutStopSec=20s
+SendSIGKILL=no
+LimitNOFILE=8192
+
+[Install]
+WantedBy=multi-user.target
+EOF
 ```
 
 add this to the config in the `scrape_configs` section:
