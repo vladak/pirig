@@ -23,6 +23,17 @@ initially based on https://caffinc.github.io/2016/12/raspberry-pi-3-headless/
 - add `commit=60` mount option to `/` in `/etc/fstab`
   - helps to avoid I/O done by ext4 journaling thread (`jbd2`)
 
+## OpenNTPd
+
+NTP should be enabled first because `apt-get` relies on correct time when verifying release files etc.
+
+- install (as client):
+```
+sudo apt-get -y install openntpd
+service openntpd status
+```
+- add `-s` to `DAEMON_OPTS` in `/etc/default/openntpd` to synchronize time right away at startup
+
 ## Initial install
 
 ```
@@ -35,15 +46,6 @@ sudo apt-get -y install sysstat # for iostat/sar
 sudo apt-get -y install iotop # run iotop with -ob
 sudo apt-get -y install tcpdump netcat # for network debugging
 ```
-
-## OpenNTPd
-
-- install (as client):
-```
-sudo apt-get -y install openntpd
-service openntpd status
-```
-- add `-s` to `DAEMON_OPTS` in `/etc/default/openntpd` to synchronize time right away at startup
 
 ## Log2ram
 
