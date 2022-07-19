@@ -129,6 +129,8 @@ wget https://dl.grafana.com/oss/release/grafana_6.2.5_armhf.deb
 sudo dpkg -i grafana_6.2.5_armhf.deb
 ```
 
+The package will create the `grafana` user and group as well as the Grafana services.
+
 ### Setup
 
 ```
