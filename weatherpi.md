@@ -2,7 +2,8 @@
 
 Assumes:
   - sufficiently big SD card to store the Prometheus data with long retention (bigger than 32 GB)
-  - Raspbian installed (preferably 64-bit)
+  - Raspbian installed
+    - make sure this is 64-bit as it is needed for Prometheus
   - Ethernet connected + IP connectivity outside (allow this on the gateway in the appropriate VLAN rules)
     - the outside connectivity is needed e.g. for Grafana to send alerts via PagerDuty
   - sensors as per https://github.com/vladak/weather/blob/master/README.md#sensors
@@ -35,6 +36,8 @@ and follow the instructions in the `README.md` file.
 
 I had to replace Telegraf+InfluxDB since the latter was really memory hungry and even on 4GB RAM it entered periods of time
 when it was not possible to get/store data and it was just spinning on CPU.
+
+Note that [Prometheus does not really support running as 32-bit program](https://github.com/prometheus/prometheus/issues/4392#issuecomment-433721793) so make sure to use arm64 variant.
 
 Install Prometheus:
 
