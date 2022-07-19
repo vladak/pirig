@@ -129,9 +129,15 @@ wget https://dl.grafana.com/oss/release/grafana_6.2.5_armhf.deb
 sudo dpkg -i grafana_6.2.5_armhf.deb
 ```
 
-### Setup dashboards
+### Setup
 
-Use the `*dashboard.json` exports to provision Grafana.
+```
+echo DATA_DIR=/home/pi/grafana-data >> /etc/default/grafana
+```
+
+### Provision dashboards
+
+Use the `*dashboard.json` exports to provision Grafana if needed.
 
 The Y axis limits for barometric pressure are set based on https://en.wikipedia.org/wiki/List_of_atmospheric_pressure_records_in_Europe
 
