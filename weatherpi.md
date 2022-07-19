@@ -132,6 +132,10 @@ Use the `*dashboard.json` exports to provision Grafana.
 
 The Y axis limits for barometric pressure are set based on https://en.wikipedia.org/wiki/List_of_atmospheric_pressure_records_in_Europe
 
+### Setup PF monitoring
+
+use https://gist.github.com/vladak/5d2447ae774bc4886fe1ab549fff8d8b
+
 ### 502 gateway problem in Grafana
 
 After adding data source to Grafana, it complained (502 gateway error) about it. I had to change data source configuration in Grafana to use `127.0.0.1` instead of `localhost` and then it started working.
