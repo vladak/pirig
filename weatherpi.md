@@ -41,10 +41,10 @@ Note that [Prometheus does not really support running as 32-bit program](https:/
 
 Install Prometheus:
 
-Note: do not install from APT since Raspbian contains really old version. Instead, grab the latest stable form armv7 from https://prometheus.io/download/
+Note: do not install from APT since Raspbian contains really old version. Instead, grab the latest stable arm64 release from https://prometheus.io/download/
 
 ```
-wget https://github.com/prometheus/prometheus/releases/download/v2.34.0/prometheus-2.34.0.linux-armv7.tar.gz
+wget https://github.com/prometheus/prometheus/releases/download/v2.37.0/prometheus-2.37.0.linux-arm64.tar.gz
 cd
 tar xfz prometheus-2.34.0.linux-armv7.tar.gz
 mv prometheus-2.34.0.linux-armv7 prometheus
