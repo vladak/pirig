@@ -92,7 +92,9 @@ ARGS="--storage.tsdb.retention.size=20GB --config.file=/etc/prometheus/prometheu
 EOF
 ```
 
-add this to the config in the `scrape_configs` section:
+create initial configuration in `/etc/prometheus/prometheus.yml`
+
+add this to the config in the `scrape_configs` section in the configuration file:
 ```yml
   - job_name: weather
     static_configs:
