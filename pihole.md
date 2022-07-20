@@ -58,7 +58,7 @@ sudo hwclock --test
 ```
 - overwrite `/lib/udev/hwclock-set`:
 ```
-cat <<EOF > /lib/udev/hwclock-set
+cat <<EOF | sudo tee /lib/udev/hwclock-set
 #!/bin/bash
 dev=\$1
 /sbin/hwclock --rtc=$dev --hctosys
