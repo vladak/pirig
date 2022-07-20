@@ -52,8 +52,8 @@ mv prometheus-2.37.0.linux-arm64 prometheus
 
 create the user/group:
 ```
-groupadd -g 120 prometheus
-useradd -u 115 -g 120 -s /usr/sbin/nologin prometheus
+sudo groupadd -g 120 prometheus
+sudo useradd -u 115 -g 120 -s /usr/sbin/nologin prometheus
 ```
 
 setup the service:
