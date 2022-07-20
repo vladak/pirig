@@ -131,12 +131,6 @@ sudo dpkg -i grafana_6.2.5_armhf.deb
 
 The package will create the `grafana` user and group as well as the Grafana services.
 
-### Setup
-
-```
-echo DATA_DIR=/home/pi/grafana-data >> /etc/default/grafana
-```
-
 ### Provision dashboards
 
 Use the `*dashboard.json` exports to provision Grafana if needed.
