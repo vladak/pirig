@@ -87,7 +87,7 @@ sudo chown prometheus:prometheus prometheus-data
 
 create the initial config options (set the data size per expected available space on the file system):
 ```
-cat << EOF | sudo tee >/etc/default/prometheus
+cat << EOF | sudo tee /etc/default/prometheus
 ARGS="--storage.tsdb.retention.size=20GB --config.file=/etc/prometheus/prometheus.yml --storage.tsdb.path=/home/pi/prometheus-data"
 EOF
 ```
