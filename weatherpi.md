@@ -59,7 +59,7 @@ sudo useradd -u 115 -g 120 -s /usr/sbin/nologin prometheus
 setup the service:
 
 ```
-cat << EOF | sudo tee >/etc/systemd/system/prometheus.service
+cat << EOF | sudo tee /etc/systemd/system/prometheus.service
 [Unit]
 Description=Monitoring system and time series database
 Documentation=https://prometheus.io/docs/introduction/overview/
