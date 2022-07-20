@@ -127,8 +127,9 @@ sudo systemctl status prometheus
 
 Trying to install Grafana from the standard Raspbian repositories leads to blank page on port 3000 where Grafana web server listens for requests. This is due to Angular JS problems in the what seems to be abandoned package (https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=843263) so the recommended way is to install the package from the official place:
 ```
-wget https://dl.grafana.com/oss/release/grafana_6.2.5_armhf.deb
-sudo dpkg -i grafana_6.2.5_armhf.deb
+sudo apt-get install -y adduser libfontconfig1
+wget https://dl.grafana.com/enterprise/release/grafana-enterprise_9.0.3_arm64.deb
+sudo dpkg -i grafana-enterprise_9.0.3_arm64.deb
 ```
 
 The package will create the `grafana` user and group as well as the Grafana services.
