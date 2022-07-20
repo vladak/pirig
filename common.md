@@ -41,6 +41,7 @@ service openntpd status
 sudo apt-get -y update --allow-releaseinfo-change
 sudo apt-get -y dist-upgrade
 sudo apt-get -y upgrade
+sudo apt-get -y install file
 sudo apt-get -y install vim
 sudo apt-get -y install sysstat # for iostat/sar
 sudo apt-get -y install iotop # run iotop with -ob
