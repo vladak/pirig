@@ -121,6 +121,21 @@ sudo systemctl restart prometheus
 sudo systemctl status prometheus
 ```
 
+### node exporter
+
+To see system information install Prometheus node exporter:
+```
+sudo apt-get -y install prometheus-node-exporter
+```
+and add this snippet to the `scrape_configs` section of `/etc/prometheus/prometheus.yml`: 
+```
+  - job_name: node
+    # If prometheus-node-exporter is installed, grab stats about the local
+    # machine by default.
+    static_configs:
+      - targets: ['localhost:9100']
+```
+
 ## Grafana
 
 ### Catch 1: install Grafana from the right source
