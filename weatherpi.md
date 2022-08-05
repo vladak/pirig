@@ -3,7 +3,7 @@
 Assumes:
   - sufficiently big SD card to store the Prometheus data with long retention (bigger than 32 GB)
   - Raspbian installed
-    - make sure this is 64-bit as it is needed for Prometheus (_Raspberry Pi OS Lite (64-bit)_ in the Raspberry Pi Imager app)
+    - make sure this is 64-bit (_Raspberry Pi OS Lite (64-bit)_ in the Raspberry Pi Imager app) as it is needed for Prometheus to store large amounts of data (more than 4 GB)
   - Ethernet connected + IP connectivity outside (allow this on the gateway in the appropriate VLAN rules)
     - the outside connectivity is needed e.g. for Grafana to send alerts via PagerDuty
   - sensors as per https://github.com/vladak/weather/blob/master/README.md#sensors
