@@ -39,6 +39,12 @@ mosquitto_sub -d -t test
 mosquitto_pub -d -t test -m "Hello, World!"
 ```
 
+## mq2anno service
+
+This is for displaying Grafana annotations from MQTT messages.
+
+Follow the instructions on https://github.com/vladak/mq2anno/
+
 ## Weather service
 
 Contains monitoring for various environmental metrics.
