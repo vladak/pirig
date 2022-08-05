@@ -14,6 +14,24 @@ In order to keep the correct time for Grafana/Prometheus, a RTC is installed. Th
 
 The setup follows the steps on https://github.com/vladak/pirig/blob/master/pihole.md#rtc
 
+## MQTT broker
+
+- Install Mosquito MQTT broker:
+```
+sudo apt install -y mosquitto mosquitto-clients
+cat << EOF | sudo tee /etc/mosquitto/conf.d/local.conf
+allow_anonymous true
+listener 1883
+EOF
+sudo systemctl restart mosquitto
+systemctl status mosquitto
+```
+- Test basic MQTT functionality:
+```
+mosquitto_sub -d -t test
+mosquitto_pub -d -t test -m "Hello, World!"
+```
+
 ## Weather service
 
 Contains monitoring for various environmental metrics.
