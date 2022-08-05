@@ -14,6 +14,13 @@ In order to keep the correct time for Grafana/Prometheus, a RTC is installed. Th
 
 The setup follows the steps on https://github.com/vladak/pirig/blob/master/pihole.md#rtc
 
+## Disable unneeded services
+
+```
+sudo systemctl stop bluetooth
+sudo systemctl disable bluetooth
+```
+
 ## MQTT broker
 
 - Install Mosquitto MQTT broker:
