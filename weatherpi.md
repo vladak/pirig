@@ -167,6 +167,26 @@ and add this snippet to the `scrape_configs` section of `/etc/prometheus/prometh
       - targets: ['localhost:9100']
 ```
 
+### MQTT exporter
+
+To be able to receive metrics from external sensors, install the [MQTT exporter](https://github.com/hikhvar/mqtt2prometheus):
+```
+sudo apt-get -y install prometheus-mqtt-exporter
+```
+Setup configuration in `/etc/prometheus/mqtt-exporter.yaml`
+and add this snippet to the `scrape_configs` section of `/etc/prometheus/prometheus.yml`: 
+```
+  - job_name: mqtt
+    # If prometheus-mqtt-exporter is installed, grab metrics from external sensors.
+    static_configs:
+      - targets: ['localhost:9641']
+```
+and restart both services:
+```
+sudo systemctl restart prometheus-mqtt-exporter
+sudo systemctl restart prometheus
+```
+
 ## Grafana
 
 ### Catch 1: install Grafana from the right source
