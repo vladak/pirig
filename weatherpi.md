@@ -16,7 +16,7 @@ The setup follows the steps on https://github.com/vladak/pirig/blob/master/pihol
 
 ## MQTT broker
 
-- Install Mosquito MQTT broker:
+- Install Mosquitto MQTT broker:
 ```
 sudo apt install -y mosquitto mosquitto-clients
 cat << EOF | sudo tee /etc/mosquitto/conf.d/local.conf
