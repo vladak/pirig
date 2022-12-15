@@ -22,6 +22,8 @@ initially based on https://caffinc.github.io/2016/12/raspberry-pi-3-headless/
   - GPLU memory split to 16 MB (in Performance options)
 - add `commit=60` mount option to `/` in `/etc/fstab`
   - helps to avoid I/O done by ext4 journaling thread (`jbd2`)
+- assumes that `systemd-timesyncd` service is installed
+  - it picks up the NTP server from DHCP options
 
 ## Initial install
 
