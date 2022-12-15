@@ -19,7 +19,13 @@ This Pi serves as:
 ```
 sudo apt-get install ntp/stable
 ```
-
+- check:
+```
+cat << EOF | ntpq localhost
+peers
+exit
+EOF
+```
 Note: OpenNTPd would be better, however it has some issue that on the Raspberry Pi stops responding to clients after some time.
 
 ## RTC
