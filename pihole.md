@@ -19,8 +19,13 @@ This Pi serves as:
 ```
 sudo apt-get install ntp/stable
 ```
+- make sure systemd-timesyncd is disabled:
+```
+systemctl status systemd-timesyncd
+```
 - check:
 ```
+systemctl status ntp
 cat << EOF | ntpq localhost
 peers
 exit
