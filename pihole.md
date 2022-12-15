@@ -13,12 +13,13 @@ This Pi serves as:
 
 ![Pihole with RTC](/img/Pi_DS3231.jpg)
 
-## OpenNTPd
+## NTP daemon
+
+OpenNTPd would be better, however it has some issue that on the Raspberry Pi stops responding to clients after some time.
 
 - enable as server: uncomment line `listen on *` in `/etc/openntpd/ntpd.conf` and restart the service:
 ```
-sudo service openntpd restart
-sudo ntpctl -s status
+sudo apt-get install ntp/stable
 ```
 
 ## RTC
