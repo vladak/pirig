@@ -45,6 +45,12 @@ This is for displaying Grafana annotations from MQTT messages.
 
 Follow the instructions on https://github.com/vladak/mq2anno/
 
+## Plug to MQTT service
+
+This is for publishing state of Tapo smart plugs to MQTT.
+
+Follow the instructions on https://github.com/vladak/plug2mqtt/
+
 ## Weather service
 
 Contains monitoring for various environmental metrics.
