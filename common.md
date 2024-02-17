@@ -22,6 +22,12 @@ initially based on https://caffinc.github.io/2016/12/raspberry-pi-3-headless/
   - GPLU memory split to 16 MB (in Performance options)
 - add `commit=60` mount option to `/` in `/etc/fstab`
   - helps to avoid I/O done by ext4 journaling thread (`jbd2`)
+- disable swap (per https://www.dzombak.com/blog/2023/12/Stop-using-the-Raspberry-Pi-s-SD-card-for-swap.html)
+```
+sudo dphys-swapfile swapoff
+sudo dphys-swapfile uninstall
+sudo update-rc.d dphys-swapfile remove
+```
 - assumes that `systemd-timesyncd` service is installed
   - it picks up the NTP server from DHCP options
 
