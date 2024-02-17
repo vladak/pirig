@@ -30,6 +30,24 @@ sudo update-rc.d dphys-swapfile remove
 ```
 - assumes that `systemd-timesyncd` service is installed
   - it picks up the NTP server from DHCP options
+- disable unneeded features (per https://www.dzombak.com/blog/2023/12/Disable-or-remove-unneeded-services-and-software-to-help-keep-your-Raspberry-Pi-online.html)
+```
+# mandb rebuild
+sudo rm /var/lib/man-db/auto-update
+# avahi for .local/mDNS
+sudo apt remove --purge avahi-daemon
+sudo apt autoremove --purge
+# modem manager
+sudo apt remove --purge modemmanager
+sudo apt autoremove --purge
+# Bluetooth
+sudo systemctl disable bluetooth.service
+sudo systemctl disable hciuart.service
+sudo apt remove --purge bluez
+# unneeded software
+sudo apt remove --purge wolfram-engine triggerhappy xserver-common lightdm
+sudo apt autoremove --purge
+```
 
 ## Initial install
 
