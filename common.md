@@ -48,6 +48,11 @@ sudo apt remove --purge bluez
 sudo apt remove --purge wolfram-engine triggerhappy xserver-common lightdm
 sudo apt autoremove --purge
 ```
+- automatically reboot after kernel panic (https://www.dzombak.com/blog/2023/12/Mitigating-hardware-firmware-driver-instability-on-the-Raspberry-Pi.html)
+```
+sudo sysctl -w kernel.panic=1
+echo "kernel.panic = 1" | sudo tee /etc/sysctl.d/90-kernelpanic-reboot.conf
+```
 
 ## Initial install
 
