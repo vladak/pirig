@@ -241,7 +241,16 @@ Add the following snippet to `/etc/prometheus/prometheus.yml`:
     static_configs:
       - targets: ['localhost:9234']
 ```
-
+Add the following to `/etc/mosquitto/conf.d/local.conf` so that that the `$SYS` tree is updated often enough for the Prometheus:
+```
+# Time in seconds between updates of the $SYS tree.
+# Set to 0 to disable the publishing of the $SYS tree.
+sys_interval 10
+```
+and restart the Mosquitto:
+```
+sudo systemctl restart mosquitto
+```
 Now setup the dashboard in Grafana using the `broker_*` metrics.
 
 ## Grafana
