@@ -193,6 +193,49 @@ sudo systemctl restart prometheus-mqtt-exporter
 sudo systemctl restart prometheus
 ```
 
+### Mosquitto exporter
+
+```
+cd /srv
+git clone https://github.com/sapcc/mosquitto-exporter.git
+cd  mosquitto-exporter
+go build
+```
+Create the user:
+```
+cat << EOF | sudo tee /usr/lib/sysusers.d/prometheus-mosquitto-exporter.conf
+u mosquitto_exporter - "Prometheus mosquitto-exporter user"
+EOF
+sudo systemctl restart systemd-sysusers
+```
+Install the service:
+```
+cat << EOF | sudo tee /etc/systemd/system/prometheus-mosquitto-exporter.service
+[Unit]
+Description=Prometheus exporter for mosquitto metrics
+Requires=network-online.target
+After=network-online.target
+
+[Service]
+User=mosquitto_exporter
+Group=mosquitto_exporter
+Restart=on-failure
+ExecStart=/srv/mosquitto-exporter/mosquitto-exporter
+ExecReload=/bin/kill -HUP $MAINPID
+NoNewPrivileges=true
+ProtectHome=read-only
+ProtectSystem=strict
+
+[Install]
+WantedBy=multi-user.target
+EOF
+sudo systemctl daemon-reload
+sudo systemctl enable prometheus-mosquitto-exporter
+sudo systemctl start prometheus-mosquitto-exporter
+systemctl status prometheus-mosquitto-exporter
+```
+Now setup the dashboard in Grafana using the `broker_*` metrics.
+
 ## Grafana
 
 ### Catch 1: install Grafana from the right source
