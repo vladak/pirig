@@ -234,6 +234,13 @@ sudo systemctl enable prometheus-mosquitto-exporter
 sudo systemctl start prometheus-mosquitto-exporter
 systemctl status prometheus-mosquitto-exporter
 ```
+Add the following snippet to `/etc/prometheus/prometheus.yml`:
+```
+  - job_name: mosquitto
+    static_configs:
+      - targets: ['localhost:9234']
+```
+
 Now setup the dashboard in Grafana using the `broker_*` metrics.
 
 ## Grafana
