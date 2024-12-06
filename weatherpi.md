@@ -195,6 +195,7 @@ sudo systemctl restart prometheus
 
 ### Mosquitto exporter
 
+Using some of the instructions from https://github.com/sapcc/mosquitto-exporter/pull/52/files
 ```
 cd /srv
 git clone https://github.com/sapcc/mosquitto-exporter.git
