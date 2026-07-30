@@ -42,7 +42,6 @@ sudo apt remove --purge modemmanager
 sudo apt autoremove --purge
 # Bluetooth
 sudo systemctl disable bluetooth.service
-sudo systemctl disable hciuart.service
 sudo apt remove --purge bluez
 # unneeded software
 sudo apt remove --purge wolfram-engine triggerhappy xserver-common lightdm
