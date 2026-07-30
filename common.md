@@ -16,7 +16,7 @@ initially based on https://caffinc.github.io/2016/12/raspberry-pi-3-headless/
 - create the initial user via the `userconfig` file
 - create DHCP entry for the Pi on the router
 - power up the Pi, wait for install to finish
-- SSH into the Pi as the `pi` user
+- SSH into the Pi as the created user
 - run `sudo raspi-config` and change:
   - time zone to `Europe/Prague`
   - GPLU memory split to 16 MB (in Performance options)
