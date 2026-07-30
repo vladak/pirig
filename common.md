@@ -12,8 +12,8 @@ initially based on https://caffinc.github.io/2016/12/raspberry-pi-3-headless/
     - change hostname
     - enable SSH
       - allow pubkey auth only
-    - change password of the `pi` user
     - disable telemetry
+- create the initial user via the `userconfig` file
 - create DHCP entry for the Pi on the router
 - power up the Pi, wait for install to finish
 - SSH into the Pi as the `pi` user
