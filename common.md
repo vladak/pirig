@@ -64,7 +64,7 @@ sudo apt-get -y install file
 sudo apt-get -y install vim
 sudo apt-get -y install sysstat # for iostat/sar
 sudo apt-get -y install iotop # run iotop with -ob
-sudo apt-get -y install tcpdump netcat # for network debugging
+sudo apt-get -y install tcpdump netcat-openbsd # for network debugging
 sudo apt-get -y install unattended-upgrades
 ```
 
