@@ -21,6 +21,17 @@ sudo systemctl stop bluetooth
 sudo systemctl disable bluetooth
 ```
 
+## Setup firewall
+
+```
+sudo apt install ufw
+sudo ufw allow from 10.0.1.0/25 to any port 22
+sudo ufw allow from 172.40.0.1 to any port 22
+sudo ufw deny 22
+sudo ufw enable
+sudo ufw status
+```
+
 ## MQTT broker
 
 - Install Mosquitto MQTT broker:
