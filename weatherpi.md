@@ -29,6 +29,7 @@ sudo ufw allow from 10.0.1.0/25 to any port 22
 sudo ufw allow from 172.40.0.1 to any port 22
 sudo ufw deny 22
 sudo ufw allow 3000
+sudo ufw allow 1883
 sudo ufw enable
 sudo ufw status
 ```
